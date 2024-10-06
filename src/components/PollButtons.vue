@@ -1,10 +1,7 @@
 <template>
   <div class="button-container">
-    <button v-for="option in options" 
-      :key="option.id" 
-      :class="['poll-button', { selected: selectedOptionId === option.id }]"
-      @click="selectOption(option.id)" 
-    >
+    <button v-for="option in options" :key="option.id"
+      :class="['poll-button', { selected: selectedOptionId === option.id }]" @click="selectOption(option.id)">
       {{ option.optionText }}
     </button>
   </div>

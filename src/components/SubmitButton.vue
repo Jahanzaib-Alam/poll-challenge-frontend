@@ -1,13 +1,8 @@
 <template>
-    <div class="submit-button-container">
-        <button @click="$emit('submit')" class="submit-button">SUBMIT</button>
-    </div>
+  <div class="submit-button-container">
+    <button @click="$emit('submit')" class="submit-button">SUBMIT</button>
+  </div>
 </template>
-  
-<script>
-export default {
-};
-</script>
 
 <style scoped>
 .submit-button-container {

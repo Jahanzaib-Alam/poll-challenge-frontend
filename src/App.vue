@@ -1,5 +1,6 @@
 <template>
-  <img alt="Dizplai logo" height="248" width="120" src="https://dizplai.com/wp-content/themes/neverno/library/images/logo.svg">
+  <img alt="Dizplai logo" height="248" width="120"
+    src="https://dizplai.com/wp-content/themes/neverno/library/images/logo.svg">
   <PollComponent />
 </template>
 
@@ -27,8 +28,20 @@ export default {
   height: 100vh;
 }
 
+@media (max-width: 768px) {
+  body {
+    background-image: url('@/assets/hero.webp');
+    background-size: auto;
+    /* Keep the original size */
+    background-attachment: scroll;
+    /* Allows scrolling */
+    height: 200vh;
+  }
+}
+
 /* Remove default padding added around Vue app */
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100%;

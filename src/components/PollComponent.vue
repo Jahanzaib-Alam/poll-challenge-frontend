@@ -1,26 +1,27 @@
 <template>
-    <div>
-      <div v-if="!submitted">
-        <PollQuestion :question="question" />
-        <PollButtons :options="options" @selectOption="selectOption" />
-        <SubmitButton @submit="submitOption" />
-      </div>
-      <div v-else>
-        <PollResults />
-      </div>
+  <div>
+    <div v-if="!submitted">
+      <PollHeader :headerText="question" />
+      <PollButtons :options="options" @selectOption="selectOption" />
+      <SubmitButton @submit="submitOption" />
+    </div>
+    <div v-else>
+      <PollHeader headerText="Thank you for your response" />
+      <PollResults :options="options" />
+    </div>
   </div>
 </template>
-  
+
 <script>
 import axios from 'axios';
-import PollQuestion from './PollQuestion.vue';
+import PollHeader from './PollHeader.vue';
 import PollButtons from './PollButtons.vue';
 import SubmitButton from './SubmitButton.vue';
 import PollResults from './PollResults.vue';
-  
+
 export default {
   components: {
-    PollQuestion,
+    PollHeader,
     PollButtons,
     SubmitButton,
     PollResults
@@ -39,7 +40,7 @@ export default {
   methods: {
     async fetchPollData() {
       try {
-        const response = await axios.get('/polls/active');
+        const response = await axios.get('api/polls/active');
         this.question = response.data.questionText; // Assuming question is a field in the response
         this.options = response.data.options; // Assuming options is an array in the response
       } catch (error) {
@@ -52,8 +53,9 @@ export default {
     async submitOption() {
       if (this.selectedOptionId) {
         try {
-          await axios.post('/polls/vote/' + this.selectedOptionId);
+          await axios.post('api/polls/vote/' + this.selectedOptionId);
           this.submitted = true;
+          await this.fetchPollData();
         } catch (error) {
           console.error('Error submitting option:', error);
         }
@@ -64,4 +66,3 @@ export default {
   }
 };
 </script>
-  
