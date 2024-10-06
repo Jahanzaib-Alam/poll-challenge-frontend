@@ -60,4 +60,11 @@ export default {
 .percentage-text {
     margin-left: auto;
 }
+
+/* Enlarge results on mobile/tablets so they are not squashed*/
+@media (max-width: 1024px) {
+    .result-card-button {
+        width:90%;
+    }
+}
 </style>

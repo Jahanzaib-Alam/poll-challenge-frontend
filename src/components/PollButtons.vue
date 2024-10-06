@@ -60,4 +60,11 @@ export default {
   background-color: rgba(255, 255, 255, 0.8);
   color: purple;
 }
+
+/* Enlarge results on mobile/tablets so they are not squashed*/
+@media (max-width: 1024px) {
+    .poll-button {
+        width:90%;
+    }
+}
 </style>
