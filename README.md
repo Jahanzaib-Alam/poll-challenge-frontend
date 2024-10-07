@@ -3,7 +3,7 @@
 # Prerequisites
 - Vue CLI
 - Axios (for API calls)
-- Jest (for unit tests)
+- Jest and Vue Test Utils (for unit tests)
 
 # Instructions for local setup
 1. Ensure the back-end API is running at localhost on port 8081.
