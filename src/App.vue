@@ -1,5 +1,5 @@
 <template>
-  <img alt="Dizplai logo" height="140" width="120"
+  <img alt="Dizplai logo" height="80" width="120"
     src="https://dizplai.com/wp-content/themes/neverno/library/images/logo.svg">
   <PollComponent />
 </template>

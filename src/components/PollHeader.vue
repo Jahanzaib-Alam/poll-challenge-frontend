@@ -21,7 +21,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40px 0px;
+  padding: 20px 0px;
 }
 
 .poll-header {
