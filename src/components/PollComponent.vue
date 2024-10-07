@@ -41,14 +41,14 @@ export default {
     async fetchPollData() {
       try {
         const response = await axios.get('api/polls/active');
-        this.question = response.data.questionText; // Assuming question is a field in the response
-        this.options = response.data.options; // Assuming options is an array in the response
+        this.question = response.data.questionText;
+        this.options = response.data.options;
       } catch (error) {
         console.error('Error fetching poll data:', error);
       }
     },
     selectOption(optionId) {
-      this.selectedOptionId = optionId; // Set the selected option ID
+      this.selectedOptionId = optionId;
     },
     async submitOption() {
       if (this.selectedOptionId) {

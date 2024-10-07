@@ -41,9 +41,7 @@ export default {
     width: 30%;
     height: 3em;
     display: flex;
-    /* Use flexbox for layout */
     align-items: center;
-    /* Center items vertically */
     justify-content: space-between;
 }
 
