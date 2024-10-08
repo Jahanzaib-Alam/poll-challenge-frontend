@@ -4,6 +4,8 @@ Front end Vue application for Poll application
 # Assumptions/Considerations
 In a live environment, a session variable or cookie would be used to prevent someone from submitting multiple votes from the same browser by just refreshing the page. This has been left out to make it easy to demo the application.
 
+Another point is that on the results page, we should have a get request sent every 10 seconds or so to ensure that when other votes come in, the results are updated on the page in real time. This is something I forgkt to implement before submitting the challenge.
+
 # Prerequisites
 - Node JS
 - Vue CLI
